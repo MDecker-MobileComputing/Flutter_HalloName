@@ -80,13 +80,20 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 print('Button geklickt, "${_controller.text}" will begrüßt werden.');
               },
-              child: Text('Begrüße mich'),
+              child: Text(
+                'Begrüße mich',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
             ),
+            SizedBox(height: 16), // für vertikalen Abstand
             ElevatedButton(
               onPressed: () {
                 _controller.clear();
               },
-              child: Text('Zurücksetzen'),
+              child: Text(
+                'Zurücksetzen',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
             ),
           ],
         ),
