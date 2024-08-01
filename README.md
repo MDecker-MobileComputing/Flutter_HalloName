@@ -1,3 +1,4 @@
 # Flutter: "Hallo Name"
 
-Mein Erstes Projekt mit Flutter, Juli 2024
+Mein Erstes Projekt mit [Flutter](https://flutter.dev/), ab Juli 2024.
+
