@@ -78,7 +78,23 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ElevatedButton(
               onPressed: () {
-                print('Button geklickt, "${_controller.text}" will begrüßt werden.');
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: Text('Begrüßung'),
+                      content: Text('Hallo, ${_controller.text.trim()}!'),
+                      actions: <Widget>[
+                        TextButton(
+                          child: Text('OK'),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                      ],
+                    );
+                  },
+                );
               },
               child: Text(
                 'Begrüße mich',
