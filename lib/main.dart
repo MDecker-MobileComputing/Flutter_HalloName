@@ -35,7 +35,8 @@ class MyHomePage extends StatefulWidget {
 
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+
+  TextEditingController _controller = TextEditingController();
 
   /*
   void _incrementCounter() {
@@ -60,16 +61,36 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Stack(
+                alignment: Alignment.centerRight,
+                children: [
+                  TextField(
+                    controller: _controller,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Name eingeben',
+                    ),
+                  )
+                ],
+              ),
+            ),
             ElevatedButton(
               onPressed: () {
-                print('Button geklickt: Begrüße mich');
+                print('Button geklickt, "${_controller.text}" will begrüßt werden.');
               },
               child: Text('Begrüße mich'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                _controller.clear();
+              },
+              child: Text('Zurücksetzen'),
             ),
           ],
         ),
       ),
     );
   }
-
 }
